@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6857e8">
+
+    <title>TaskFlow | To-Do List</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script
+        src="https://unpkg.com/lucide@1.20.0/dist/umd/lucide.min.js"
+        defer
+    ></script>
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="#" class="logo">
+                TaskFlow<span>.</span>
+            </a>
+
+            <button
+                type="button"
+                id="theme-toggle"
+                class="btn btn-secondary theme-toggle"
+                aria-pressed="false"
+            >
+                <i data-lucide="moon" aria-hidden="true"></i>
+                <span>Dark Mode</span>
+            </button>
+
+            <p class="header-subtitle">
+                Plan your day, one task at a time.
+            </p>
+
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <section class="welcome-section">
+            <p class="eyebrow">YOUR DAILY PLANNER</p>
+            <h1>My Tasks</h1>
+            <p class="welcome-text">
+                Stay organized and make every day productive.
+            </p>
+        </section>
+
+        <section class="stats-grid" aria-label="Task summary">
+
+            <article class="stat-card">
+                <p>Total Tasks</p>
+                <h2 id="total-count">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <p>Pending</p>
+                <h2 id="pending-count">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <p>Completed</p>
+                <h2 id="completed-count">0</h2>
+            </article>
+
+        </section>
+
+        <section class="panel add-task-panel">
+
+            <div class="section-heading">
+                <h2 id="form-heading">Add a New Task</h2>
+                <p>What would you like to accomplish?</p>
+            </div>
+
+            <form id="task-form" novalidate>
+
+                <div class="form-group">
+                    <label for="task-input">Task name</label>
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="For example, Learn JavaScript"
+                        maxlength="120"
+                        autocomplete="off"
+                    >
+
+                    <small
+                        id="task-error"
+                        class="error-message"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+
+                        <select id="task-category">
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="Study">Study</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+
+                        <select id="task-priority">
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="task-due-date">
+                        Due date (optional)
+                    </label>
+
+                    <input
+                        type="date"
+                        id="task-due-date"
+                    >
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="submit-btn"
+                    >
+                        + Add Task
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancel-edit"
+                        hidden
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+        <section class="task-section">
+
+            <div class="task-toolbar">
+
+                <div class="section-heading">
+                    <h2>Your Task List</h2>
+                    <p>Track your progress and stay focused.</p>
+                </div>
+
+                <div class="search-group">
+                    <label for="search-input">Search tasks</label>
+
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Search your tasks..."
+                    >
+                </div>
+
+            </div>
+
+            <div class="filter-row">
+
+                <div class="filter-control">
+                    <label for="filter-select">Show:</label>
+
+                    <select id="filter-select">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    id="clear-completed"
+                    class="btn btn-secondary"
+                >
+                    Clear Completed
+                </button>
+
+            </div>
+
+            <div id="tasks-list" class="tasks-list"></div>
+
+            <p id="empty-state" class="empty-state">
+                No tasks yet. Add your first task above!
+            </p>
+
+            <p
+                id="task-status"
+                class="status-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with care by Keerthana S</p>
+    </footer>
+
+</body>
+</html>

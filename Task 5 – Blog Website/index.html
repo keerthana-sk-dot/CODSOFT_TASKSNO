@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LumeBlog — thoughtful stories about lifestyle, technology, travel, and creativity."
+    />
+    <meta name="theme-color" content="#f8f5f0" />
+    <title>LumeBlog | Stories for a Thoughtful Life</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#" class="logo" aria-label="LumeBlog homepage"
+          >Lume<span>Blog</span><i>.</i></a
+        >
+
+        <button
+          class="icon-button menu-button"
+          id="menu"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav class="navigation" id="nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#articles">Stories</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="search-box nav-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search stories..."
+              aria-label="Search stories"
+            />
+          </label>
+          <button
+            class="icon-button"
+            id="theme"
+            type="button"
+            aria-label="Switch to dark mode"
+            title="Toggle dark mode"
+          >
+            ☾
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow"
+            ><span class="eyebrow-dot"></span> IDEAS FOR EVERYDAY LIVING</span
+          >
+          <h1>Stories for a <em>thoughtful</em> life.</h1>
+          <p>
+            A little inspiration for the way you live, work, explore, and
+            create.
+          </p>
+          <a class="button primary" href="#articles"
+            >Explore stories <span>↗</span></a
+          >
+          <div class="hero-note">
+            <span class="note-line"></span> New perspectives, one story at a
+            time.
+          </div>
+        </div>
+        <div class="hero-art">
+          <img
+            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85"
+            alt="A notebook and coffee on a peaceful workspace"
+            fetchpriority="high"
+          />
+          <div class="image-caption">
+            <span>THE SUNDAY EDIT</span>
+            <strong>Make room for what matters.</strong>
+          </div>
+          <span class="art-stamp" aria-hidden="true">L<br />B.</span>
+        </div>
+      </section>
+
+      <section
+        class="featured-section container"
+        aria-labelledby="featuredHeading"
+      >
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">HANDPICKED FOR YOU</span>
+            <h2 id="featuredHeading">The featured story</h2>
+          </div>
+          <span class="heading-note">A good place to begin</span>
+        </div>
+
+        <article class="featured-card">
+          <div class="featured-image">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
+              alt="A thoughtful digital workspace"
+              loading="lazy"
+            />
+          </div>
+          <div class="featured-copy">
+            <span class="category-label">TECHNOLOGY</span>
+            <h2>Building a calmer relationship with technology</h2>
+            <p>
+              Small, intentional changes can help us use our devices with more
+              purpose and bring a little more balance to everyday life.
+            </p>
+            <div class="post-meta">
+              <span>Jordan Lee</span><span>·</span><span>Oct 12, 2026</span
+              ><span>·</span><span>7 min read</span>
+            </div>
+            <button class="text-link" type="button" data-open="1">
+              Read the story <span>↗</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="stories-section container" id="articles">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THE JOURNAL</span>
+            <h2>Explore our stories</h2>
+            <p class="section-description">
+              Ideas worth your time, selected for curious minds.
+            </p>
+          </div>
+          <label class="sort-control">
+            <span>Sort by</span>
+            <select id="sortPosts" aria-label="Sort articles">
+              <option value="latest">Latest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="title">Title A–Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div
+          class="category-bar"
+          id="categoryFilters"
+          aria-label="Filter stories by category"
+        >
+          <button
+            class="category-filter active"
+            type="button"
+            data-category="All"
+          >
+            All stories
+          </button>
+          <button
+            class="category-filter"
+            type="button"
+            data-category="Technology"
+          >
+            Technology
+          </button>
+          <button
+            class="category-filter"
+            type="button"
+            data-category="Lifestyle"
+          >
+            Lifestyle
+          </button>
+          <button class="category-filter" type="button" data-category="Travel">
+            Travel
+          </button>
+          <button
+            class="category-filter"
+            type="button"
+            data-category="Creativity"
+          >
+            Creativity
+          </button>
+        </div>
+
+        <div class="content-layout">
+          <div class="story-area">
+            <div class="results-line">
+              <span id="count">10 stories</span>
+              <span>Curiosity starts here</span>
+            </div>
+
+            <div class="posts-grid" id="posts"></div>
+
+            <p class="empty-message hidden" id="empty">
+              No stories found. Try another search or category.
+            </p>
+
+            <div class="load-more-wrap">
+              <button class="button outline" id="loadMore" type="button">
+                Load more stories <span>↓</span>
+              </button>
+            </div>
+          </div>
+
+          <aside class="sidebar">
+            <section class="sidebar-card about-card" id="about">
+              <span class="eyebrow">A NOTE FROM US</span>
+              <h3>Welcome to LumeBlog.</h3>
+              <p>
+                A small corner of the internet for useful ideas, meaningful
+                moments, and fresh perspectives.
+              </p>
+              <a href="#newsletter" class="text-link">Stay in the loop ↗</a>
+            </section>
+
+            <section class="sidebar-card">
+              <h3>Browse topics</h3>
+              <div class="sidebar-categories">
+                <button type="button" data-sidebar-category="Technology">
+                  <span>Technology</span><span>→</span>
+                </button>
+                <button type="button" data-sidebar-category="Lifestyle">
+                  <span>Lifestyle</span><span>→</span>
+                </button>
+                <button type="button" data-sidebar-category="Travel">
+                  <span>Travel</span><span>→</span>
+                </button>
+                <button type="button" data-sidebar-category="Creativity">
+                  <span>Creativity</span><span>→</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="sidebar-card">
+              <h3>Find a story</h3>
+              <label class="search-box sidebar-search">
+                <span aria-hidden="true">⌕</span>
+                <input
+                  id="sidebarSearch"
+                  type="search"
+                  placeholder="What interests you?"
+                  aria-label="Search stories in sidebar"
+                />
+              </label>
+              <p class="sidebar-hint">
+                Search by title, topic, author, or tag.
+              </p>
+            </section>
+
+            <section class="quote-card">
+              <span class="quote-mark">“</span>
+              <blockquote>
+                Almost everything will work again if you unplug it for a few
+                minutes, including you.
+              </blockquote>
+              <span class="quote-credit">— ANNE LAMOTT</span>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="newsletter-section" id="newsletter">
+        <div class="container newsletter-inner">
+          <div>
+            <span class="eyebrow">A LETTER FROM LUME</span>
+            <h2>A little inspiration,<br /><em>delivered occasionally.</em></h2>
+            <p>Thoughtful reads for your inbox. No noise, just good ideas.</p>
+          </div>
+          <form id="newsletter" class="newsletter-form">
+            <label for="email">Your email address</label>
+            <div class="newsletter-input-row">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+              <button class="button primary" type="submit">Subscribe ↗</button>
+            </div>
+            <p id="newsletterMessage" class="form-message" aria-live="polite">
+              By subscribing, you agree to receive our occasional newsletter.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div>
+          <a href="#" class="logo">Lume<span>Blog</span><i>.</i></a>
+          <p>Thoughtful stories for a life well lived.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#articles">Stories</a>
+          <a href="#categories">Topics</a>
+          <a href="#about">About</a>
+        </div>
+        <a class="back-top" href="#home">Back to top ↑</a>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> LumeBlog. Made for curious minds.</span>
+        <span>Read slowly. Live thoughtfully.</span>
+      </div>
+    </footer>
+
+    <dialog id="dialog" class="article-dialog" aria-label="Article details">
+      <button
+        id="close"
+        class="dialog-close"
+        type="button"
+        aria-label="Close article"
+      >
+        ×
+      </button>
+      <div id="articleContent" class="dialog-content"></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
